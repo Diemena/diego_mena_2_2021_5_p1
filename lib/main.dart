@@ -46,9 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // ignore: prefer_const_constructors
         Text("Elefante"),
         _bigItem(),
-        _item('Name', 'assets/maria.jpg')
-        _item('Name', 'assets/juan.jpg')
-        _item('Name', 'assets/sara.jpg')
+        _item('nane', 'assets/maria.jpg')
       ],
     );
   }
@@ -61,18 +59,6 @@ class _MyHomePageState extends State<MyHomePage> {
       height: (screenwidth - 64) * 3 / 5,
       decoration: const BoxDecoration(
         image: DecorationImage(image: AssetImage('assets/juana.jpg')),
-        image: DecorationImage(image: AssetImage('assets/juan.jpg')),
-        image: DecorationImage(image: AssetImage('assets/sara.jpg')),
-      ),
-    );
-  }
-  Widget _bigItem() {
-  return Container(
-      width: double.infinity,
-      height: (screenwidth - 64) * 3 / 5,
-      decoration: const BoxDecoration(
-        image: DecorationImage(image: AssetImage('assets/juan.jpg')),
-      
       ),
     );
   }
@@ -80,22 +66,21 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _item(String name, String imageName) {
     return Row(
       children: <Widget>[
-        Expanded(
-          child: Column(
-            children: <Widget>[
-              Row(
-                children: <Widget>[Container(), Text(name)],
-              ),
-              // ignore: prefer_const_constructors
-              Text('Maria'),
-              // ignore: prefer_const_constructors
-              Text('')
-            ],
-          ),
+        Column(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Container(),
+                // ignore: prefer_const_constructors
+                Text('Maria')
+              ],
+            ),
+            // ignore: prefer_const_constructors
+            Text(''),
+            // ignore: prefer_const_constructors
+            Text('')
+          ],
         ),
-        Image(
-          image: AssetImage(imageName),
-        )
       ],
     );
   }
